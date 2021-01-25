@@ -1,0 +1,13 @@
+--- a/server/db.c	2020-01-21 20:21:48.000000000 +0100
++++ b/server/db.c	2021-01-25 17:19:52.870343662 +0100
+@@ -127,6 +127,10 @@ int write_lease (lease)
+ 	     fprintf(db_file, "\n  ends %s", tval) < 0))
+ 		++errors;
+ 
++ //vyatta--second attempt
++        if (lease->subnet && lease->subnet->shared_network && lease->subnet->shared_network->name)
++             fprintf(db_file, "\n#shared-network: %s", lease->subnet->shared_network->name);
++
+ 	if (lease->tstp &&
+ 	    ((tval = print_time(lease->tstp)) == NULL ||
+ 	     fprintf(db_file, "\n  tstp %s", tval) < 0))
