@@ -8,7 +8,7 @@ Currently tested on USG-XG-8.
 ## Replace dhcpd3 with dhcpd 4.4.x
 ```
 cd /
-sudo curl https://github.com/jtinov/usg-dhcpd/releases/download/0.1/dhcpd.tar.gz --output dhcpd.tar.gz
+sudo curl -L https://github.com/jtinov/usg-dhcpd/releases/download/0.1/dhcpd.tar.gz --output dhcpd.tar.gz
 sudo tar -xzf dhcpd.tar.gz
 sudo rm dhcpd.tar.gz
 sudo /config/scripts/post-config.d/dhcp.sh
@@ -16,7 +16,7 @@ sudo /config/scripts/post-config.d/dhcp.sh
 
 ## Building the binaries
 ```
-$ wget  https://buildroot.org/downloads/buildroot-2020.11.1.tar.gz
+$ wget https://buildroot.org/downloads/buildroot-2020.11.1.tar.gz
 $ tar -xvzf buildroot-2020.11.1.tar.gz
 $ cd buildroot-2020.11.1
 $ wget https://raw.githubusercontent.com/jtinov/usg-dhcpd/main/.config
